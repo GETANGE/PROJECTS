@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Object Model</title>
+  <link rel="stylesheet" href="PROJECT1.CSS">
+</head>
+  <style>
+    .header{
+    background-color: green;
+    color: white;
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: -10px;
+    padding: 20px;
+}
+.div-outline{
+    outline-style: solid ;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 350px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.display-grid{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    outline-style:solid;
+    padding: 10px;
+    margin-top: 2px;
+    list-style-type: none;
+    width: 280px;
+}
+.button{
+    background-color: black;
+    color: white;
+    height: 30px;
+    border-radius: 5px;
+}
+.button:hover{
+    background-color: orangered;
+    color: black;
+}
+.text-class{
+    height: 25px;
+    border-radius: 5px;
+}
+
+  </style>
+<body>
+  <header class="header" id="header-title">
+    <h1>Add To Cart</h1>
+  </header>
+  <div class="display-grid">
+    <div class="div-outline">
+      <h2>Add Items</h2>
+      <form>
+        <input type="text" class="text-class">
+        <input type="submit" value="Submit" class="button">
+      </form>
+      <br>
+      <h2>Items</h2>
+      <ul>
+        <li class="list-group-item" style="font-size: 30px;background-color:aqua;"> <b> ITEMS ADDED.</b></li>  
+      </ul>
+    </div>
+  </div>
+  <script>
+    let form = document.querySelector("form");
+    let submitButton = document.querySelector("input[type='submit']");
+    let itemsList = document.querySelector("ul");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+      let itemText = document.querySelector("input[type='text']").value;
+      itemsList.innerHTML += `<li class="list-group-item">${itemText}</li>`;
+    });
+  </script>
+</body>
+</html>
