@@ -63,7 +63,7 @@ li{
       <h2>Add Items</h2>
       <form>
         <input type="text" class="text-class">
-        <input type="submit" value="Submit" class="button">
+        <input type="submit" value="Add" class="button">
       </form>
       <br>
       <h2>Items</h2>
