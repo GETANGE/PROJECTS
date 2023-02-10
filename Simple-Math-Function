@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+   <form action="">
+    <label for="">Enter a number:</label>
+    <input type="text" id="num"><br><br>
+
+    <input type="button" value="cose-1" onclick="calculate()">
+    <input type="button" value="sine-1" onclick="calculate2()">
+   </form>
+
+   <p><span id="result"></span></p>
+   <p><span id="result2"></span></p>
+   <p><span id="result3"></span></p>
+</body>
+  <script>
+    //calculate the inverse of the cose.
+    function calculate(){
+      let number=document.getElementById("num").value;
+   document.getElementById('result').innerHTML=Math.acos(number);
+    }
+    //calculate the inverse of the sine.
+    function calculate2(){
+      let number=document.getElementById("num").value;
+   document.getElementById("result2").innerHTML=Math.asin(number);
+    }
+  </script>
+</html>
