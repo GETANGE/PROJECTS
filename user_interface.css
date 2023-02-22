@@ -1,47 +1,59 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     color: black;
     list-style: none;
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: montserrat;
     background-color: whitesmoke;
 }
 
-nav{
+nav {
     background-color: goldenrod;
     height: 50px;
 }
 
-nav ul li{
+.search {
+    background-color: white;
+}
+
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+nav ul li {
     display: inline-block;
     line-height: 40px;
     margin: 0.5px;
 }
 
-nav ul li a{
+nav ul li a {
     color: black;
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 5px;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     color: goldenrod;
     background-color: black;
 }
-a{
+
+a {
     text-decoration: none;
 }
 
-a.active, a:hover{
+a.active, a:hover {
     color: black;
-    
 }
 
-.checkbtn{
+.checkbtn {
     font-size: 30px;
     float: right;
     line-height: 50px;
@@ -50,39 +62,38 @@ a.active, a:hover{
     display: none;
 }
 
-#check{
+#check {
     display: none;
 }
 
-@media (max-width: 768px) {
-    nav ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        top: 50px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-        background-color: whitesmoke;
-    }
+img {
+    width: 200px;
+    height: 200px;
+}
 
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
+input {
+    background-color: goldenrod;
+    height: 30px;
+    border-radius: 10px;
+    padding: 5px;
+}
 
-    nav ul li a{
-        font-size: 20px;
-    }
-     a:hover{
-        background: none;
-        color: goldenrod;
-    }
-    .checkbtn{
-        display: block;
-    }
-    #check:checked ~ ul{
-        left: 0;
-    }
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.card {
+    border: 1px solid goldenrod;
+    padding: .5rem;
+    height: 200px;
+}
+.card >.header{
+    margin-bottom: .25rem;
+
+}
+.hide{
+    display: none;
 }
