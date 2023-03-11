@@ -1,0 +1,471 @@
+/* Default styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+ box-sizing: border-box;
+}
+.bi-trash{
+  color: red;
+  margin-left: 60px;
+}
+
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.HomeBtn{
+  background-color: goldenrod;
+  color: black !important;
+  border: none !important;;
+  padding: 6px;
+  border-radius: 5px ;
+  margin-top: 10px;
+}
+.banner {
+  width: 100%;
+  height: 50vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.80)), url(foods.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.heading{
+  width:100%;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1{
+  font-size: 6rem;
+  color: goldenrod;
+}
+.banner h3{
+  color: white;
+}
+
+/* Media queries */
+@media (max-width: 414px) { /* iPhone XR width */
+  .banner h1 {
+    font-size: 3rem;
+  }
+  .banner h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+
+/* Default styles */
+
+.food{
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.food1{
+  background-color: orange;
+  flex-basis: 22%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.food1 img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.food1 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.food1 p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.food1 .input_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.food1 .input_btn i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.food1 .quantity {
+  margin: 0 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.food2{
+  background-color: orange;
+  flex-basis: 22%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+.food2 img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.food3{
+  background-color: orange;
+  flex-basis:22%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+.food3 img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.food4{
+  background-color: orange;
+  flex-basis:22%;
+  margin-bottom: 2%;
+  border-radius: 20px;
+}
+
+.food4 img{
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.food h3{
+  margin-left: 80px;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  color: #fff;
+  background: goldenrod;
+}
+.footer:hover{
+  color: black;
+}
+
+input{
+  border-radius: 20px;
+  padding: 10px;
+  margin-left: 100px;
+}
+
+p{
+  font-size: 20px;
+  margin-left: 90px;
+}
+.a{
+  text-decoration: none;
+  color: black !important;
+}
+.a2{
+  text-decoration: none;
+  color: black !important;
+}
+/* Media queries */
+@media (max-width: 414px) { /* iPhone XR width */
+  .food1, .food2, .food3, .food4 {
+    flex-basis: 100%;
+    margin-right: 0;
+    flex-grow: 1;
+  }
+  .food h3 {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 540px) { /* iPhone Duo Fold width */
+  .food1, .food2, .food3, .food4 {
+    flex-basis: 30%;
+    margin-right: 2%;
+    flex-grow: 1;
+  }
+}
+
+.price-quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 20px;
+  align-items: center;
+}
+
+
+
+
+
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.search-form input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.search-form button[type="submit"] {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.search-form button[type="submit"]:hover {
+  background-color: #f2f2f2;
+}
+
+.search-form i.fa {
+  color: #aaa;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 414px) {
+  /* Adjust styling for iPhone XR */
+  .search-form {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .search-form input[type="text"] {
+    max-width: none;
+  }
+}
+
+
+
+
+
+
+
+
+.begin{
+  width: 100%;
+  height: 50vh;
+}
+
+
+
+.navbar {
+  width: 100%;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.navbar1{
+  width: 100%;
+  background-color: goldenrod;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: goldenrod;
+}
+
+.nav-links a:hover {
+  background-color: black;
+  width: 100%;
+  
+}
+
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* added */
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.hamburger {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px auto;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .nav-links a:hover{
+    background-color: black;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .nav-links.active {
+    width: 100%;
+  }
+}
+
+.cart{
+  position: relative;
+  font-size: 23px;
+  padding: 5px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.cartAmount{
+  position: absolute;
+  font-size: 14px;
+  background-color: black;
+  border-radius: 100px;
+  width: 23px;
+  color: white !important;
+  top: -10px;
+  right: 0;
+  display: grid;
+  justify-content: center;
+  padding: 3px;
+}
+.shopping-cart{
+  display: grid;
+  grid-template-columns: repeat(1, 320px);
+  justify-content: center;
+  gap: 15px;
+}
+.cart-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid whitesmoke;
+  margin-bottom: 20px;
+  padding: 20px;
+  height: 350px;
+}
+.cart-item-price{
+  background-color: goldenrod;
+  padding: 5px;
+  border-radius: 5px 6px;
+}
+
+.title-price-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.input_btn{
+  margin-top:30px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px; 
+  font-size: 23px;
+}
+.input_btn .btn{
+  margin-left: 20px;
+}
+.btn_order{
+  margin-left: 50 px;
+}
+.bi bi-dash-lg{
+  color: red;
+  font-size: 16px;
+}
+.bi bi-plus{
+  color: green;
+  font-size: 16px;
+}

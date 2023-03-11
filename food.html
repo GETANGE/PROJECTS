@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/66ddf9928d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="food.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!------------burger icon----------->      
+    <nav class="navbar">
+      <button class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+<!------------navigation links------>
+      <div class="navbar1">
+        <ul class="nav-links">
+          <li><a href="#">Foods</a></li>
+          <li><a href="#">Rooms</a></li>
+          <li><a href="index.html">Swimming Pool</a></li>
+          <li><a href="#">Gym</a></li>
+          <li><a href="#">Conference Rooms</a></li>
+          <li><a href="#">Wedding Grounds</a></li>
+      </div>
+  <!----------cart----------> 
+       <a href="cart.html" class="a">
+        <div class="cart">
+          <i class="bi bi-cart4"></i>
+          <div id="cartAmount" class="cartAmount">0</div>
+         </div>
+       </a>  
+           
+        </ul>
+       
+      </nav>
+
+
+<div class="banner">
+  <div class="heading">
+      <h1>FOODS</h1>
+      <h3>Greater  Taste, Greater Preferences.</h3>  
+    </div>
+  </div>
+
+<form action="#" method="get" class="search-form">
+    <input type="text" name="" placeholder="Search products" onkeyup="search()" id="search-item">
+    <button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+  </form>
+  
+
+<div class="shop" id="shop">
+    <div class="food" id="product-list">
+     </div>
+
+  
+  
+     <div class="food" id="product-list1">
+ 
+    </div>
+</div>
+
+<section class="footer">
+  <div class="icons">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-linkedin"></i>
+      <i class="bi bi-instagram"></i>
+      <p>copyright 2023 Mountain View resort</p>
+  </div>    
+ 
+<script src="data.js"></script>
+   <script>
+    //responsive  navigation bar 
+    // select the hamburger button and navigation links
+       const hamburger = document.querySelector('.hamburger');
+       const navLinks = document.querySelector('.nav-links');
+
+   // add a click event listener to the hamburger button
+  hamburger.addEventListener('click', () => {
+  // toggle the active class on the hamburger button
+  hamburger.classList.toggle('active');
+  // toggle the display property of the navigation links
+  navLinks.classList.toggle('active');
+});
+
+    
+    //search input functionality.
+    const search = () => {
+    const searchbox = document.getElementById('search-item').value.toUpperCase();
+    const product = document.querySelectorAll('.food1');
+  
+    // loop through the products.
+    for (let i = 0; i < product.length; i++) {
+      let match = product[i].querySelector('h3');
+  
+      // find out if the user value matches with the product name value.
+      if (match) {
+        let textvalue = match.textContent || match.innerHTML;
+  
+        if (textvalue.toUpperCase().indexOf(searchbox) > -1) {
+          product[i].style.display = '';
+        } else {
+          product[i].style.display = 'none';
+        }
+      }
+    }
+  }
+const storeitems = document.querySelector('#product-list').querySelectorAll('.food1, .food2');
+  //shopping cart
+let shop = document.getElementById('shop');
+
+let basket= JSON.parse(localStorage.getItem("Data")) || [];
+
+let generateShop = (items) => {
+  let shopContainer = document.createElement('div');
+  shopContainer.className = 'shop-container';
+
+  shopContainer.innerHTML = items.map((item) => {
+    let {id, name, price, desc,img} = item;
+    let search = basket.find((x) => x.id === id) || [];
+    return `
+      <div class="food1" id="product-id-${id}" class="product1"  >
+        <img width="220px" height="220px" src="${img}" alt="${item.name}">
+        <h3>${name}</h3>
+        <div class="price-quantity">
+          <p>Ksh ${price}/=</p>
+          <div class="input_btn">
+            <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+            <div id=${id} class="quantity">
+               ${search.items === undefined ? 0: search.items}
+              </div>
+            <i  onclick="increment(${id})" class="bi bi-plus"></i>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  shop.appendChild(shopContainer);
+};
+
+generateShop(shopitems);
+generateShop(shopitems2);
+
+let increment=(id)=> {
+
+  let selectedItem=id;
+  let search = basket.find((x)=>x.id===selectedItem.id);
+   if(search=== undefined){
+    basket.push({
+    id: selectedItem.id,
+    items: 1,
+     });
+   }else{
+     search.items += 1;
+   }
+   
+  //console.log(basket);
+  update(selectedItem.id);
+  localStorage.setItem("Data", JSON.stringify(basket));
+};
+let decrement=(id)=> {
+  let selectedItem=id;
+  let search = basket.find((x)=>x.id===selectedItem.id);
+
+  if(search === undefined) return;
+   else if(search.items===0){
+    return;
+   }else{
+     search.items -= 1;
+   }
+   
+   update(selectedItem.id);
+   basket = basket.filter((x) => x.items !==0);
+  //console.log(basket);
+  
+  localStorage.setItem("Data", JSON.stringify(basket));
+}
+let update=(id)=> {
+  let search=basket.find((x)=>x.id === id);
+  console.log(search.items);
+  document.getElementById(id).innerHTML = search.items;
+  calculation();
+}
+
+let calculation =()=>{
+  let cartIcon= document.getElementById('cartAmount');
+  cartIcon.innerHTML = basket.map((x)=>x.items).reduce((x,y)=> x+y, 0);
+}
+calculation();
+   </script>
+</body>
+</html>
