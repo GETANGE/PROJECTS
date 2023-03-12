@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Login form</title>
+</head>
+<body>
+    <section class="side">
+        <!--img src="Design_hotel.png" alt="login image" class="login-image"-->
+    </section>
+    <section class="main">
+        <div class="login-container">
+            <p class="title">Login Details</p>
+            <div class="separator"></div>
+            <p class="welcome-message">
+                Please, provide your login credentials
+                to proceed and have access to all of 
+                our services.
+            </p>
+
+            <form name="myform" action="" class="login-form" onsubmit="return validateform()">
+                <div class="form-controler">
+                    <label for="email">Email</label><br>
+                    <input type="text" id="email" class="email" placeholder="example@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <br>
+            
+                    <label for="password">Password</label><br>
+                    <input type="password" id="password" class="password">
+                    <i class="fas fa-lock"></i>
+                    <br>
+            
+                    <br><br>
+                    <a href="food.html">
+                        <input type="submit" value="Login" class="button">
+                      </a>
+                      
+                    </br>
+                    
+                    <p>Forgotten your password?</p><br>
+                    <p>Create account here <a href="sign up.html" target="_self">Click here</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        function validateform(){  
+            var password=document.getElementById("password").value; 
+            var email=document.getElementById("email").value; 
+  
+             if(password.length<6){  
+                alert("Password must be at least 6 characters long.");  
+                return false;  
+            } 
+             if(email==null|| email==""){
+                alert("Please enter a valid email address");
+                return false; 
+            } 
+        }
+    </script>
+</body> 
+</html>

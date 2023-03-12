@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sign up.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <title>Login form</title>
+</head>
+<body>
+    <section class="side">
+        <!--img src="Design_hotel.png" alt="login image" class="login-image"-->
+    </section>
+    <section class="main">
+        <div class="login-container">
+            <p class="title">Sign in Details</p>
+            <div class="separator"></div>
+            <p class="welcome-message">
+               sign in here to get premium services of your choice.
+            </p>
+
+            <form action="/auth/register" class="login-form" method="POST">
+                <div class="form-controler">
+                    <label for="firstName">First Name</label><br>
+                   <input type="text" placeholder="example. John" id="firstName" name="firstName">
+                   <i class="fas fa-user"></i>
+                   <br>
+
+                   <label for="username">Username</label><br>
+                   <input type="text" placeholder="example. John" id="username" name="username">
+                     <i class="fas fa-user"></i>
+                   <br>
+
+                   <label for="email">Email</label><br>
+                   <input type="text" placeholder="example@gmail.com" id="email" name="email">
+                   <i class="fas fa-envelope"></i>
+                   <br>
+
+                   <label for="password">Password</label><br>
+                   <input type="password" id="password" name="password">
+                   <i class="fas fa-lock"></i>
+                   <br>
+
+                   <label for="passwordConfirm">Confirm Password</label><br>
+                   <input type="password"  id="passwordConfirm" name="passwordConfirm">
+                   <br><br>
+                   <button type="submit" class="button">Register</button>
+                   
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
